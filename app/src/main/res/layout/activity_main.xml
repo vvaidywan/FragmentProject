@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Main Activity"
+        android:textSize="30dp"/>
+
+    <Button
+        android:id="@+id/btnA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_700"
+        android:text="FragmentA"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#EC3535"
+        android:text="DialogFragment"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#4CAF50"
+        android:text="next"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <fragment
+        android:id="@+id/testFragment"
+        class="com.example.fragmentproject.TestFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp">
+    </fragment>
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp" />
+
+</LinearLayout>
