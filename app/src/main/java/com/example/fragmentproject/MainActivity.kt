@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Button
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.preference.PreferenceFragmentCompat
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,10 +16,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var fragmentManager: FragmentManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        Log.i("Activity Lifecycle", "onCreate1 called")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Log.i("Activity Lifecycle", "onCreate called")
+        Log.i("Activity Lifecycle", "onCreate2 called")
 
         // Ques 2 : Observe Lifecycle of Fragment with activity while using Add, Replace, hide, show, remove
         // Ans- using FragmentA, (dynamic)
@@ -43,6 +45,12 @@ class MainActivity : AppCompatActivity() {
         fragmentManager = supportFragmentManager
         btnB.setOnClickListener(View.OnClickListener {
             DialogFragA().show(fragmentManager, "huh")
+        })
+
+        val btnD = findViewById<Button>(R.id.btnD)
+        btnD.setOnClickListener(View.OnClickListener {
+            val intent = Intent(this@MainActivity, PrefFragActivity::class.java)
+            startActivity(intent)
         })
 
         // Ques 4 : landscape mode two fragments side by side
@@ -84,3 +92,9 @@ class MainActivity : AppCompatActivity() {
         Log.i("Activity Lifecycle", "onDestroy called")
     }
 }
+class MySettingsFragment : PreferenceFragmentCompat() {
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        setPreferencesFromResource(R.xml.preference, rootKey)
+    }
+}
+

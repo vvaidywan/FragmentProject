@@ -40,6 +40,15 @@
         android:textColor="@color/black"
         android:textSize="20sp" />
 
+    <Button
+        android:id="@+id/btnD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#4CAF50"
+        android:text="Preference Fragment"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
     <fragment
         android:id="@+id/testFragment"
         class="com.example.fragmentproject.TestFragment"
